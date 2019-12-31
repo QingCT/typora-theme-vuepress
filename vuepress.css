@@ -1,0 +1,391 @@
+/*
+ * CSS 加载顺序
+ * typora://typemark/lib.asar/bootstrape/css/bootstrap.css
+ * typora://typemark/lib.asar/diagram/css/mermaid.css
+ * typora://typemark/lib.asar/font-awesome-4.1.0/css/font-awesome.min.css
+ * typora://typemark/lib.asar/ionicons-2.0.1/css/ionicons.min.css
+ * typora://typemark/lib.asar/typora-icon/style.css
+ * typora://typemark/style/base.css
+ * typora://typemark/style/base-control.css
+ * typora://typemark/style/codemirror.css
+ * typora://typemark/style/window.css
+ * typora://typemark/style/megamenu.css
+ * typora://userData\themes\vuepress.css
+ * typora://userData\themes\base.user.css
+ * typora://userData\themes\vuepress.user.css
+ */
+
+*,
+:after,
+:before {
+  box-sizing: initial;
+}
+
+:root {
+  --bg-color: #ffffff; /* */
+  --text-color: #2c3e50; /*  */
+  --theme-color: #3eaf7c; /* */
+  --theme-color-2: #42b983; /* */
+  --code-selected-color: #264f78;
+
+  --panel-border-color: var(--theme-color-2); /* 目录 等 focus 边框颜色 */
+  --table-border-color: #dfe2e5; /* 表格 边框颜色 */
+  --search-select-bg-color: #ff9632; /*  */
+  --search-select-text-color: #000; /*  */
+  --heading-char-color: var(--theme-color-2); /* header 提示颜色 */
+  --active-file-bg-color: #fff; /*  */
+  --active-file-text-color: var(--theme-color); /*  */
+  --active-file-border-color: var(--theme-color); /*  */
+  --side-bar-bg-color: var(--bg-color); /*  */
+  --side-bar-menu-active-tint: var(--side-bar-menu-active-tint);
+  --sidebar-width: 300px; /*  */
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* 文件区 */
+.file-tree-node:hover > .file-node-content {
+  color: var(--active-file-text-color);
+  cursor: pointer;
+}
+/* 大纲区 */
+.outline-item {
+  background: transparent;
+}
+.outline-item .outline-active {
+  color: var(--active-file-text-color);
+}
+.outline-item:hover {
+  background: transparent;
+  color: var(--active-file-text-color);
+}
+
+/* 编辑区 */
+#write {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a,
+p a code {
+  color: var(--theme-color);
+}
+p a code {
+  font-weight: 400;
+}
+kbd {
+  background: #eee;
+  border: 0.15rem solid #ddd;
+  border-bottom: 0.25rem solid #ddd;
+  border-radius: 0.15rem;
+  padding: 0 0.15em;
+}
+blockquote {
+  font-size: 1rem;
+  /* color: #777; */
+  border-left: 4px solid var(--theme-color-2);
+  background-color: #f3f5f7;
+  margin: 1rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  background-color: rgba(66, 185, 131, 0.1);
+}
+blockquote > p {
+  margin: 0;
+}
+ol,
+ul {
+  padding-left: 1.2em;
+}
+strong {
+  font-weight: 600;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* margin-top: -3.1rem;
+  padding-top: 4.6rem; */
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+h1:first-child + p,
+h1:first-child + pre,
+h2:first-child + p,
+h2:first-child + pre,
+h3:first-child + p,
+h3:first-child + pre,
+h4:first-child + p,
+h4:first-child + pre,
+h5:first-child + p,
+h5:first-child + pre,
+h6:first-child + p,
+h6:first-child + pre {
+  margin-top: 2rem;
+}
+h1 {
+  font-size: 2.2rem;
+}
+h2 {
+  font-size: 1.65rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #eaecef;
+}
+h3 {
+  font-size: 1.35rem;
+}
+h1 tt,
+h1 code {
+  font-size: inherit !important;
+}
+h2 tt,
+h2 code {
+  font-size: inherit !important;
+}
+h3 tt,
+h3 code {
+  font-size: inherit !important;
+}
+h4 tt,
+h4 code {
+  font-size: inherit !important;
+}
+h5 tt,
+h5 code {
+  font-size: inherit !important;
+}
+h6 tt,
+h6 code {
+  font-size: inherit !important;
+}
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}
+ol,
+p,
+ul {
+  line-height: 1.7;
+}
+hr {
+  border: 0;
+  border-top: 1px solid #eaecef;
+}
+table {
+  margin: 1rem 0;
+}
+tr {
+  border-top: 1px solid #dfe2e5;
+}
+tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+td,
+th {
+  border: 1px solid #dfe2e5;
+  padding: 0.6em 1em;
+}
+
+code {
+  /* color: #476582; */
+  color: #d63200;
+  /* color: var(--theme-color); */
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+.md-footnote {
+  background-color: #f8f8f8;
+  color: #e96900;
+}
+mark {
+  background-color: #ebffeb;
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin: 0 2px;
+  /* font-weight: 400; */
+  color: var(--text-color);
+}
+
+/* 代码 */
+.md-fences {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+  word-wrap: normal;
+  line-height: 1.4;
+  padding: 1.25rem 1.5rem;
+  margin: 0.85rem 0;
+  background-color: #282c34;
+  border-radius: 6px;
+}
+.CodeMirror-gutters {
+  border-right: 1px solid #0e0f11;
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid #aeafad;
+}
+.CodeMirror-linenumber {
+  padding: 0 12px 0 0px;
+}
+.md-fences pre {
+  padding: 0 12px;
+  color: #d4d4d4;
+  caret-color: #fff;
+}
+.md-fences .CodeMirror-selected,
+.md-fences .CodeMirror-selectedtext {
+  background: var(--code-selected-color) !important;
+  color: var(--select-text-font-color) !important;
+}
+.md-fences .cm-s-inner .cm-keyword {
+  color: #c586c0;
+}
+.md-fences .cm-s-inner .cm-atom,
+.md-fences .cm-s-inner.cm-atom {
+  color: #569cd6;
+}
+.md-fences .cm-s-inner .cm-number {
+  color: #b5cea8;
+}
+.md-fences .cm-s-inner .cm-def {
+  color: #9cdcfe;
+}
+.md-fences .cm-s-inner .cm-variable {
+  color: #9cdcfe;
+}
+.md-fences .cm-s-inner .cm-variable-2 {
+  color: #7faad4;
+}
+.md-fences .cm-s-inner .cm-variable-3 {
+  color: #7fc3aa;
+}
+.md-fences .cm-s-inner .cm-string {
+  color: #ce9178;
+}
+.md-fences .cm-s-inner .cm-property {
+  color: #dcdcaa;
+}
+.md-fences .cm-s-inner .cm-operator {
+  color: #d4d4d4;
+}
+.md-fences .cm-s-inner .cm-comment,
+.md-fences .cm-s-inner.cm-comment {
+  color: #6a9955;
+}
+.md-fences .cm-s-inner .cm-string-2 {
+  color: #d16969;
+}
+.md-fences .cm-s-inner .cm-meta {
+  color: #569cd6;
+}
+.md-fences .cm-s-inner .cm-qualifier {
+  color: #d7ba7d;
+}
+.md-fences .cm-s-inner .cm-builtin {
+  color: #997fd4;
+}
+.md-fences .cm-s-inner .cm-tag {
+  color: #569cd6;
+}
+.md-fences .cm-s-inner .cm-bracket {
+  color: #808080;
+}
+.md-fences .cm-s-inner .cm-attribute {
+  color: #9cdcfe;
+}
+
+.md-fences .cm-s-inner .cm-quote,
+.md-fences .cm-s-inner.cm-quote {
+  color: #7fcc7f;
+}
+
+.md-fences .cm-s-inner .cm-hr,
+.md-fences .cm-s-inner.cm-hr {
+  color: hsl(0, 0%, 60%);
+}
+
+.md-fences .cm-s-inner .cm-link,
+.md-fences .cm-s-inner.cm-link {
+  color: #7f7fe5;
+}
+
+.cm-negative {
+  color: #eea1a1;
+}
+
+.cm-positive {
+  color: #90cc90;
+}
+
+.cm-header,
+.cm-strong {
+  font-weight: 700;
+}
+
+.cm-error {
+  color: #ff7f7f;
+}
+
+.cm-invalidchar {
+  color: #ff7f7f;
+}
+
+.cm-constant {
+  color: #42b983;
+}
+
+.cm-defined {
+  color: #dac37f;
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #7fff7f;
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #ff9090;
+}
